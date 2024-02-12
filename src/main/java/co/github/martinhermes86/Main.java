@@ -23,10 +23,11 @@ public class Main {
         System.out.println("The time in 14 days will be: " + formattedDatePlus14);
 
         //Step 3
-        LocalDate futureDate = LocalDate.of(2024, 12, 31);
-        if (now.toLocalDate().isBefore(futureDate)) {
+        LocalDate nowComparison = LocalDate.now();
+        LocalDate futureDate = LocalDate.of(2024, 2, 13);
+        if (nowComparison.isBefore(futureDate)) {
             System.out.println("The current date is before the specified future date.");
-        } else if (futureDate.isEqual(now.toLocalDate())) {
+        } else if (nowComparison.isEqual(futureDate)) {
             System.out.println("The current date is the same as the specified future date.");
         } else {
             System.out.println("The current date is after the specified future date.");
@@ -48,7 +49,7 @@ public class Main {
 
         System.out.println("New Year's Eve is on: " + newYearsEve);
 
-        DateTimeFormatter formatterNy = DateTimeFormatter.ofPattern("dd. MMMM");
+        DateTimeFormatter formatterNy = DateTimeFormatter.ofPattern("dd.MMMM");
 
         String formattedDateNy = newYearsEve.format(formatterNy);
         System.out.println("New Year's Eve is on: " + formattedDateNy);
